@@ -73,3 +73,37 @@ const sum = a => b => c => a + b + c
 ```
 pipe(function1, function2, function3(arg1)(arg2))
 ```
+
+### Pure Functions
+
+A pure function in JavaScript is a function that returns the same result if the same arguments(input) are passed in the function.
+
+
+```
+// a pure function
+
+const add = (x, y) => x + y;
+
+add(2, 4); // 6
+
+```
+
+```
+// an impure function
+
+let x = 2;
+
+const add = (y) => {
+  x += y;
+};
+
+add(4); // x === 6 (the first time)
+
+```
+
+why pure functions? 
+
++ Self documenting -> we know what are all the input dependents
++ easily testable
++ concurrency
++ cacheable (as result are consisten, we can use the result for same input just like _DP_)
