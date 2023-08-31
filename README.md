@@ -107,3 +107,15 @@ why pure functions?
 + easily testable
 + concurrency
 + cacheable (as result are consisten, we can use the result for same input just like _DP_)
+
+### Immutability 
+
+By default objects and arrays are mutable. Immutability gives stricter control over your data immediately making your code safer and more predictable.
+
+So to acheive immutability, we don't let objects and arrays to modify, instead create a copy and add all new/modified data in this new copy.
+
+To acheive this in objects we can use ```object.assign``` or the "..." operator.
+
+For arrays we can use the map() or filter() or slice() funtions and copy the new values in another array, thereby not touching the original array/objects.
+
+Or we can also used libraries like *immuatable.js* or *immer*
