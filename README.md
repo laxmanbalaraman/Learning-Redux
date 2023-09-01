@@ -135,3 +135,37 @@ Thus Three Building blocks of Redux are:
 1. Action
 2. State
 3. Reducer
+
+
+#### Creating Actions:
+
+Tell which part of the store date to be modified
+
+**Syntax**
+
+```
+{
+    type: "bugAdded", // mandatory, anyting apart from this is optional
+    payload: {
+        description: "...",
+        id: "..."
+    }
+}
+```
+
+
+#### Reducer
+
+Reducer is just a simple function that takes in state and action and return new value of state based on action.
+
+```
+function reducer(state, action){
+    if(action.type == 'something')
+        return [
+            ...state,
+            {};
+        ]
+}
+```
+
+we will feed this funtion as a param to other higher oder components
