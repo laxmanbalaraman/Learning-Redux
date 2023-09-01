@@ -180,3 +180,16 @@ We create a store using the ```CreateUser()``` after taking reducer as an input.
 import {CreateUser} from 'redux'
 const store  = CreateUser(reducer);
 ```
+
+**Dispatching action**
+
+```
+store.dispatch({
+    type: 'action type',
+    payload; {
+        something ; something
+    }
+});
+```
+
+when action happens, store dispatches the action to the reducer, reducer changes the state.
