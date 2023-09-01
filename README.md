@@ -169,3 +169,14 @@ function reducer(state, action){
 ```
 
 we will feed this funtion as a param to other higher oder components
+
+
+#### Store
+![Alt text](https://miro.medium.com/v2/resize:fit:1400/1*fMBzrTeHx2_7whzDgir6DA.png)
+
+We create a store using the ```CreateUser()``` after taking reducer as an input.
+
+```
+import {CreateUser} from 'redux'
+const store  = CreateUser(reducer);
+```
