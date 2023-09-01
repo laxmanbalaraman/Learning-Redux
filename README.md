@@ -119,3 +119,19 @@ To acheive this in objects we can use ```object.assign``` or the "..." operator.
 For arrays we can use the map() or filter() or slice() funtions and copy the new values in another array, thereby not touching the original array/objects.
 
 Or we can also used libraries like *immuatable.js* or *immer*
+
+
+## Redux
+
+
+We store the state in a JS object called the store (more like frontend for DB)
+When handling stores, we cant mutate it, instead have to use spread operators to assign state data to a new object
+
+Reducer is the function that is responsible for handling store data.
+Action is an event that triggers the change in the store data
+
+Thus Three Building blocks of Redux are:
+
+1. Action
+2. State
+3. Reducer
