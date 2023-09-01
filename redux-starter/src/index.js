@@ -1,6 +1,8 @@
 import store from "./store";
 
-
+const unsubscribe = store.subscribe(() => {
+    console.log("store changed", store.getState());
+})
 
 store.dispatch({
     type: 'bugAdded',
@@ -9,7 +11,9 @@ store.dispatch({
     }  
 });
 
-console.log('after adding bug', store.getState());
+unsubscribe();
+
+// subscribe will not trigger from here on.
 
 store.dispatch({
     type: 'bugRemoved',
@@ -17,5 +21,3 @@ store.dispatch({
         id: 1
     }
 })
-
-console.log('after removing bug', store.getState());

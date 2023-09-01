@@ -193,3 +193,15 @@ store.dispatch({
 ```
 
 when action happens, store dispatches the action to the reducer, reducer changes the state.
+
+**Subscribe and unsubscribe**
+
+subscribe is a method which detectes changes in the store.
+
+so here is where we can trigger react to re-render DOM.
+
+```subscribe``` returns a function called unsubscribe
+
+It's possible that when one component loads, it can trigger many actions. The action will be subscribing until a response comes, which can lead to a huge bottleneck or memory leaks.
+
+So, its always advisable to unsubscribe an action as soon as the component gets unmounted.
