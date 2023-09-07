@@ -31,6 +31,16 @@ const slice = createSlice({
 })
 
 
+// selector functions are functions that state as an argument and returns data that is part of the state as output
+// more like select * from where this = that in DBMS
+
+
+// get id = 2
+
+export const getAllBugs = state =>  state.entity.bugs
+    
+
+
 export const {bugAdded, bugUpdated, bugRemoved} = slice.actions;
 export default slice.reducer;
 

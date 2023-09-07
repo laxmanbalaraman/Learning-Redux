@@ -1,5 +1,5 @@
 import store from "./store";
-import { bugAdded, bugRemoved, bugUpdated } from "./bugs";
+import { bugAdded, bugRemoved, bugUpdated, getAllBugs } from "./bugs";
 import { projectAdded } from "./projects";
 
 const unsubscribe = store.subscribe(() => {
@@ -13,6 +13,8 @@ store.dispatch(projectAdded({name: "project 1"}))
 unsubscribe();
 
 // subscribe will not trigger from here on.
+
+console.log(getAllBugs(store.getState()));
 
 store.dispatch(bugRemoved({id: 1}));
 
