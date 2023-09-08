@@ -255,3 +255,10 @@ just give paramter to the middleware and in the function definition add the extr
 
 ```middleware: [logger({destination: 'console'})]``` in *configStore()*
 
+
+**Dispatching functions**
+
+sometime we want to perform an action only after certain step (may be after calling an API). So in that case we dispatch an funtion instead of an action.
+once that function in perform, the function itself calls the action.
+
+

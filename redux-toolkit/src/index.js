@@ -6,6 +6,11 @@ const unsubscribe = store.subscribe(() => {
     console.log("store changed", store.getState());
 })
 
+store.dispatch((dispatch, getState) => {
+    console.log('dispatching function')
+    dispatch(projectAdded({name: "project 2"}))
+});
+
 store.dispatch(bugAdded({description: "Bug1"}));
 store.dispatch(bugUpdated({id : 1, description: "Bug2"}));
 store.dispatch(projectAdded({name: "project 1"}))
