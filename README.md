@@ -205,3 +205,48 @@ so here is where we can trigger react to re-render DOM.
 It's possible that when one component loads, it can trigger many actions. The action will be subscribing until a response comes, which can lead to a huge bottleneck or memory leaks.
 
 So, its always advisable to unsubscribe an action as soon as the component gets unmounted.
+
+
+#### Middleware
+
+Redux Middleware allows you to intercept every action sent to the reducer so you can make changes to the action or cancel the action. Middleware helps you with logging, error reporting, making asynchronous requests, and a whole lot more.
+
+(store, action) ➡️ middleware(s) ➡️ reducer
+
+
+**Middleware in redux**
+
+We can include middleware in ```configureStore()``` of reduxToolkit that takes middleware as a array property in its object argument.
+
+```
+
+configureStore({
+    reducer: reducer,
+    middleware: [......]
+})
+
+```
+
+> Middleware function is curried [redux-toolkit/src/Middleware/logger.js](redux-toolkit/src/Middleware/logger.js)
+
+However, if you are using pure redxux using ```createStore()```, then you can use applyMiddleware function like this
+
+```
+
+createStore( reducer, applyMiddleware(....));
+```
+
+
+**Creating a middleware**
+
+a middleware function takes in three arguments
+
+*store, next, action*
+
++ store to modify or do "action" on the store.
++ next to call the next function middleware or a reducer.
++ action to tell what action to do on the store using a reducer.
+
+
+
+
