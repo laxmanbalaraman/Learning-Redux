@@ -247,6 +247,11 @@ a middleware function takes in three arguments
 + next to call the next function middleware or a reducer.
 + action to tell what action to do on the store using a reducer.
 
+**Paramterised middleware**
 
+just give paramter to the middleware and in the function definition add the extra paramter in "Curried" way
 
+```const logger = param => store => next => action => {}```
+
+```middleware: [logger({destination: 'console'})]``` in *configStore()*
 
